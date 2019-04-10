@@ -1,7 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Authors>CF</Authors>
+    <Company>None</Company>
+    <Product>Web Advert Microservices</Product>
+    <RepositoryUrl>https://github.com/fengchong1991/WebAdvert.Web</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/fengchong1991/WebAdvert.Web</PackageProjectUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
 
 </Project>
