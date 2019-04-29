@@ -12,6 +12,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using AutoMapper;
 using WebAdvert.Api.Services;
+using WebAdvert.Api.HealthChecks;
+using Microsoft.Extensions.HealthChecks;
 
 namespace WebAdvert.Api
 {
@@ -30,9 +32,7 @@ namespace WebAdvert.Api
             services.AddAutoMapper();
             services.AddTransient<IAdvertStorageService, DynamoDBAdvertStorage>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddHealthChecks(checks =>
-            {
-            });
+            services.AddHealthChecks().AddCheck<StorageHealthCheck>("Storage");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

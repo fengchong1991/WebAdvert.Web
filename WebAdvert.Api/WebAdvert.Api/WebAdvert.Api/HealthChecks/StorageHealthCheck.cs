@@ -1,10 +1,11 @@
-﻿using Microsoft.Extensions.HealthChecks;
+﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using WebAdvert.Api.Services;
+using HealthCheckResult = Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult;
 
 namespace WebAdvert.Api.HealthChecks
 {
@@ -16,11 +17,16 @@ namespace WebAdvert.Api.HealthChecks
             _storageService = storageService;
         }
 
-        public async ValueTask<IHealthCheckResult> CheckAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default(CancellationToken))
         {
             var isStorageOk = await _storageService.CheckHealthAsync();
 
-            return HealthCheckResult.FromStatus(isStorageOk ? CheckStatus.Healthy : CheckStatus.Unhealthy, string.Empty);
+            if(!isStorageOk)
+            {
+                return HealthCheckResult.Unhealthy();
+            }
+
+            return HealthCheckResult.Healthy();
         }
     }
 }
