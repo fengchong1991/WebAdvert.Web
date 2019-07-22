@@ -21,6 +21,8 @@ namespace WebAdvert.Api.Controllers
 
         [HttpPut]
         [Route("Create")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(typeof(CreateAdvertResponse), 200)]
         public async Task<IActionResult> Create(AdvertModel model)
         {
             string recordId;
@@ -28,7 +30,6 @@ namespace WebAdvert.Api.Controllers
             try
             {
                 recordId = await _advertStorageService.Add(model);
-
             }
             catch (KeyNotFoundException)
             {

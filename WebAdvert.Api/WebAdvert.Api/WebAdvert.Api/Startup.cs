@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using AutoMapper;
 using WebAdvert.Api.Services;
+using WebAdvert.Api.HealthChecks;
 
 namespace WebAdvert.Api
 {
@@ -29,6 +23,9 @@ namespace WebAdvert.Api
         {
             services.AddAutoMapper();
             services.AddTransient<IAdvertStorageService, DynamoDBAdvertStorage>();
+            services.AddHealthChecks()
+                .AddCheck<StorageHealthCheck>("Storage");
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -44,6 +41,7 @@ namespace WebAdvert.Api
                 app.UseHsts();
             }
 
+            app.UseHealthChecks("/health");
             app.UseHttpsRedirection();
             app.UseMvc();
         }
