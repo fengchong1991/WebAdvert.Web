@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using WebAdvert.Api.Models;
 
-namespace WebAdvert.Api.Services
+namespace WebAdvert.Api.Services.Dynamodb
 {
     public interface IAdvertStorageService
     {

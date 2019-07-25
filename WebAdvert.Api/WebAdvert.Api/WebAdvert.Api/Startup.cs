@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using AutoMapper;
 using WebAdvert.Api.Services;
 using WebAdvert.Api.HealthChecks;
+using WebAdvert.Api.Services.Dynamodb;
 
 namespace WebAdvert.Api
 {
@@ -23,6 +24,9 @@ namespace WebAdvert.Api
         {
             services.AddAutoMapper();
             services.AddTransient<IAdvertStorageService, DynamoDBAdvertStorage>();
+
+            
+
             services.AddHealthChecks()
                 .AddCheck<StorageHealthCheck>("Storage");
 

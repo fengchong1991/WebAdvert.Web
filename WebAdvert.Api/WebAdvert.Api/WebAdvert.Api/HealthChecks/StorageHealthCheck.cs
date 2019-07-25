@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using WebAdvert.Api.Services;
+using WebAdvert.Api.Services.Dynamodb;
 
 namespace WebAdvert.Api.HealthChecks
 {

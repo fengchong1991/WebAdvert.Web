@@ -7,7 +7,7 @@ using WebAdvert.Api.Models;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 
-namespace WebAdvert.Api.Services
+namespace WebAdvert.Api.Services.Dynamodb
 {
     public class DynamoDBAdvertStorage : IAdvertStorageService
     {
