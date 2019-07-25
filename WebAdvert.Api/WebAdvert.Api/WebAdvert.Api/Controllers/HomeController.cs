@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebAdvert.Api.Models;
 using WebAdvert.Api.Services;
+using WebAdvert.Api.Services.Dynamodb;
 
 namespace WebAdvert.Api.Controllers
 {

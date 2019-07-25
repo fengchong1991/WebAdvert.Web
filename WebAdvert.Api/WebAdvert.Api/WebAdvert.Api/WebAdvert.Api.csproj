@@ -25,4 +25,8 @@
     <ProjectReference Include="..\WebAdvert.Api.Models\WebAdvert.Api.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
