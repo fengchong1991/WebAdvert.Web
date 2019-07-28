@@ -7,6 +7,8 @@ using AutoMapper;
 using WebAdvert.Api.Services;
 using WebAdvert.Api.HealthChecks;
 using WebAdvert.Api.Services.Dynamodb;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DataModel;
 
 namespace WebAdvert.Api
 {
@@ -25,7 +27,8 @@ namespace WebAdvert.Api
             services.AddAutoMapper();
             services.AddTransient<IAdvertStorageService, DynamoDBAdvertStorage>();
 
-            
+            services.AddAWSService<IAmazonDynamoDB>();
+
 
             services.AddHealthChecks()
                 .AddCheck<StorageHealthCheck>("Storage");

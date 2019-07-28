@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAdvert.Web", "WebAdvert.Web\WebAdvert.Web.csproj", "{B1552B49-A89C-47E6-8E7F-35FA6D22A365}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAdvert.Api.Models", "..\WebAdvert.Api\WebAdvert.Api\WebAdvert.Api.Models\WebAdvert.Api.Models.csproj", "{AE69B492-1F46-413C-9B9C-51A0FD1211D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B1552B49-A89C-47E6-8E7F-35FA6D22A365}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1552B49-A89C-47E6-8E7F-35FA6D22A365}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1552B49-A89C-47E6-8E7F-35FA6D22A365}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE69B492-1F46-413C-9B9C-51A0FD1211D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE69B492-1F46-413C-9B9C-51A0FD1211D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE69B492-1F46-413C-9B9C-51A0FD1211D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE69B492-1F46-413C-9B9C-51A0FD1211D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

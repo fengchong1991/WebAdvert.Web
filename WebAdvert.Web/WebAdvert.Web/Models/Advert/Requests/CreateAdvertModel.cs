@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace WebAdvert.Api.Models
+namespace WebAdvert.Web.Models.Advert.Requests
 {
-    public class AdvertModel
+    public class CreateAdvertModel
     {
         public string Title { get; set; }
         public string Description { get; set; }

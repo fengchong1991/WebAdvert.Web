@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebAdvert.Web.ServiceClient;
 
 namespace WebAdvert.Web
 {
@@ -32,6 +33,8 @@ namespace WebAdvert.Web
             });
 
             services.AddCognitoIdentity();
+            services.AddHttpClient<IAdvertApiClient, AdvertApiClient>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -57,7 +60,7 @@ namespace WebAdvert.Web
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index }/{id?}");
             });
         }
     }
